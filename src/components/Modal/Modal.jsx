@@ -1,7 +1,7 @@
-export const Modal = () => (
-  <div class="overlay">
-    <div class="modal">
-      <img src="" alt="" />
+export const Modal = ({ modalImage, toggleModal }) => (
+  <div className="overlay" onClick={() => toggleModal()}>
+    <div className="modal">
+      <img src={modalImage} alt="" />
     </div>
   </div>
 );

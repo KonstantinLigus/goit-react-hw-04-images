@@ -1,1 +1,5 @@
-export const Button = () => <button type="submit">Load More</button>;
+export const Button = ({ handleLoadMore }) => (
+  <button className="button" type="submit" onClick={handleLoadMore}>
+    Load More
+  </button>
+);

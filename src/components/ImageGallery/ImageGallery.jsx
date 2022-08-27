@@ -1,3 +1,16 @@
-export const ImageGallery = () => (
-  <ul class="gallery">{/* Набор <li> с изображениями */}</ul>
+import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
+
+export const ImageGallery = ({ images, toggleModal }) => (
+  <ul className="imageGallery">
+    {images.map(image => {
+      return (
+        <ImageGalleryItem
+          key={image.id}
+          largeImageURL={image.largeImageURL}
+          webformatURL={image.webformatURL}
+          toggleModal={toggleModal}
+        />
+      );
+    })}
+  </ul>
 );
