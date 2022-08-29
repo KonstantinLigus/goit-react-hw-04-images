@@ -103,11 +103,8 @@ img {
 }
 
 .searchForm-button-search-icon {
-  overflow: visible;
   width: 30px;
   height: 30px;
-  fill: #212121;
-  stroke: #212121;
 }
 
 .searchForm-input {
