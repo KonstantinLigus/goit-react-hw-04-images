@@ -62,7 +62,7 @@ export class App extends Component {
           toggleModal={this.toggleModal}
         />
         {this.state.isLoding && <Loader />}
-        {!!this.state.images.length && !this.state.isLoding && (
+        {this.state.images.length > 1 && !this.state.isLoding && (
           <Button handleLoadMore={this.handleLoadMore} />
         )}
         {this.state.isModalOpen && (
