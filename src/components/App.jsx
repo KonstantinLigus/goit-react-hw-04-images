@@ -36,7 +36,7 @@ export class App extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.setState({ query: e.currentTarget.elements.query.value, page: 1 });
+    this.setState({ query: e.target.elements.query.value, page: 1 });
   };
 
   handleLoadMore = () => {
