@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 
 export const ImageGallery = ({ images, toggleModal }) => (
@@ -14,3 +15,13 @@ export const ImageGallery = ({ images, toggleModal }) => (
     })}
   </ul>
 );
+
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      largeImageURL: PropTypes.string,
+      webformatURL: PropTypes.string,
+    })
+  ),
+};
