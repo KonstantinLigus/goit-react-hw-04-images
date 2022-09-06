@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useEffect, useState } from 'react';
 import { fetchImages } from 'services/fetchImages';
 import { Button } from './Button/Button';
@@ -13,7 +14,7 @@ export const App = () => {
   const [page, setPage] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState('');
-  let totalPages = 0;
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     setIsLoding(true);
@@ -22,7 +23,7 @@ export const App = () => {
         setImages(prev =>
           page === 1 ? images.hits : [...prev, ...images.hits]
         );
-        totalPages = images.totalHits;
+        setTotalPages(images.totalHits);
       })
       .catch(error => console.log(error))
       .finally(() => setIsLoding(false));
@@ -53,7 +54,7 @@ export const App = () => {
       <SearchBar onSubmit={onSubmit} />
       <ImageGallery images={images} toggleModal={toggleModal} />
       {isLoding && <Loader />}
-      {images.length > 0 && totalPages > 1 && !isLoding && (
+      {images.length > 0 && totalPages > 12 && !isLoding && (
         <Button handleLoadMore={handleLoadMore} />
       )}
       {isModalOpen && (
