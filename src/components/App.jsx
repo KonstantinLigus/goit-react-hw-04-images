@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { useEffect, useState } from 'react';
 import { fetchImages } from 'services/fetchImages';
 import { Button } from './Button/Button';
